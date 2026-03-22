@@ -150,12 +150,9 @@ python ingest_documents.py      # Extract → chunk → embed → index
 
 ### 4. Launch the App
 
-```bash
-streamlit run app.py
-```
+Visit https://smart-doc-search-ebeagmyzgnnpojgi9edsne.streamlit.app/
 
-Open **http://localhost:8501** in your browser.
-
+http://localhost:8501**
 ---
 
 ## How It Works
