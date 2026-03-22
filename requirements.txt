@@ -1,0 +1,7 @@
+azure-storage-blob
+azure-ai-documentintelligence
+azure-search-documents
+openai
+python-dotenv
+pandas
+streamlit
