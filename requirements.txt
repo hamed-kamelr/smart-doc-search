@@ -4,4 +4,4 @@ azure-search-documents
 openai
 python-dotenv
 pandas
-streamlit
+streamlit==1.45.0
