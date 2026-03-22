@@ -132,43 +132,13 @@ Azure Blob Storage ──► Azure Document Intelligence (OCR)
   - **Azure OpenAI** — with `text-embedding-3-small` deployed
 - **OpenAI API key** — for GPT-4o chat completions
 
-### 1. Clone & Install
 
-```bash
-git clone https://github.com/<your-username>/DocChat.git
-cd DocChat
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-```
 
 ### 2. Configure Environment
 
 Create a `.env` file in the project root:
 
-```env
-# Azure Blob Storage
-AZURE_STORAGE_CONNECTION_STRING=<your-connection-string>
-BLOB_CONTAINER_NAME=documents
 
-# Azure AI Document Intelligence
-DOC_INTELLIGENCE_ENDPOINT=<your-endpoint>
-DOC_INTELLIGENCE_KEY=<your-key>
-
-# Azure AI Search
-SEARCH_ENDPOINT=<your-search-endpoint>
-SEARCH_ADMIN_KEY=<your-admin-key>
-SEARCH_INDEX_NAME=rag-documents-index
-
-# Azure OpenAI (Embeddings)
-AZURE_OPENAI_ENDPOINT=<your-endpoint>
-AZURE_OPENAI_KEY=<your-key>
-AZURE_OPENAI_EMBEDDING_DEPLOYMENT=text-embedding-3-small
-AZURE_OPENAI_API_VERSION=2023-05-15
-
-# OpenAI (Chat)
-OPENAI_API_KEY=<your-openai-key>
-```
 
 ### 3. Run the Pipeline (one-time setup)
 
