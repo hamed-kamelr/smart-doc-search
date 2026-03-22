@@ -152,7 +152,7 @@ python ingest_documents.py      # Extract → chunk → embed → index
 
 Visit https://smart-doc-search-ebeagmyzgnnpojgi9edsne.streamlit.app/
 
-http://localhost:8501**
+http://localhost:8501
 ---
 
 ## How It Works
