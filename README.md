@@ -136,7 +136,7 @@ Azure Blob Storage ──► Azure Document Intelligence (OCR)
 
 
 
-### 2. Run the Pipeline (one-time setup)
+### 1. Run the Pipeline (one-time setup)
 
 ```bash
 python upload_documents.py      # Upload documents to Azure Blob Storage
@@ -144,7 +144,7 @@ python create_index.py          # Create the search index schema
 python ingest_documents.py      # Extract → chunk → embed → index
 ```
 
-### 4. Launch the App
+### 2. Launch the App
 
 ```bash
 streamlit run app.py
