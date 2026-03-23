@@ -136,13 +136,7 @@ Azure Blob Storage ──► Azure Document Intelligence (OCR)
 
 
 
-### 2. Configure Environment
-
-Create a `.env` file in the project root:
-
-
-
-### 3. Run the Pipeline (one-time setup)
+### 2. Run the Pipeline (one-time setup)
 
 ```bash
 python upload_documents.py      # Upload documents to Azure Blob Storage
@@ -188,18 +182,6 @@ Or use the [live demo](https://smart-doc-search-ebeagmyzgnnpojgi9edsne.streamlit
 | *"Show me the top customers by balance"* | CSV data retrieval + number precision |
 | *"What does the revenue chart show?"* | Image OCR retrieval |
 | *"Summarize all company policies"* | Cross-document synthesis |
-
----
-
-## Azure Resources & Cost
-
-| Resource | Free Tier | Enough for Dev? |
-|---|---|---|
-| Blob Storage (LRS) | 5 GB free (12 months) | Yes |
-| Document Intelligence (F0) | 500 pages/month | Yes |
-| AI Search (Free) | 50 MB, 3 indexes | Yes |
-| Azure OpenAI Embeddings | ~$0.02 / 1M tokens | Very cheap |
-| OpenAI GPT-4o | ~$2.50 / 1M input tokens | A few cents/conversation |
 
 ---
 
