@@ -25,7 +25,7 @@ Built with Azure AI Search, Azure OpenAI, GPT-4o, and Streamlit.
 
 ## Overview
 
-DocChat is a **Retrieval-Augmented Generation (RAG)** chatbot that lets you have a conversation with your documents. It combines **hybrid search** (vector + keyword) with **GPT-4o** to deliver accurate, source-cited answers from PDFs, CSVs, and images.
+DocChat is a **Retrieval-Augmented Generation (RAG)** chatbot that lets you have a conversation with your documents. It combines **hybrid search** (vector + keyword) with **GPT-4o** to deliver accurate, source-cited answers from PDFs, CSVs, and images. If you work with large document libraries or databases, DocChat makes searching through them effortless and instant.
 
 ### Key Features
 
