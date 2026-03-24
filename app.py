@@ -96,6 +96,29 @@ def get_file_icon(source):
         return "blue", "IMG"
 
 
+def get_blob_url(source_file):
+    from azure.storage.blob import BlobServiceClient, generate_blob_sas, BlobSasPermissions
+    from datetime import datetime, timedelta, timezone
+
+    connection_string = os.getenv("AZURE_STORAGE_CONNECTION_STRING")
+    container_name = os.getenv("BLOB_CONTAINER_NAME")
+
+    blob_service_client = BlobServiceClient.from_connection_string(connection_string)
+    account_name = blob_service_client.account_name
+    account_key = blob_service_client.credential.account_key
+
+    sas_token = generate_blob_sas(
+        account_name=account_name,
+        container_name=container_name,
+        blob_name=source_file,
+        account_key=account_key,
+        permission=BlobSasPermissions(read=True),
+        expiry=datetime.now(timezone.utc) + timedelta(hours=1),
+    )
+
+    return f"https://{account_name}.blob.core.windows.net/{container_name}/{source_file}?{sas_token}"
+
+
 # --- Page Config ---
 st.set_page_config(
     page_title="DocChat",
@@ -236,6 +259,15 @@ st.markdown("""
         font-size: 0.75rem;
         color: #64748b;
         font-weight: 500;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+    a.chip:hover {
+        border-color: #6366f1;
+        background: #f0f0ff;
+        color: #4338ca;
+        box-shadow: 0 2px 6px rgba(99, 102, 241, 0.15);
     }
     .chip-badge {
         display: inline-block;
@@ -402,7 +434,8 @@ for msg in st.session_state.messages:
             for s in msg["sources"]:
                 color, label = get_file_icon(s)
                 name = s.split("/")[-1]
-                chips_html += f'<div class="chip"><span class="chip-badge {color}">{label}</span>{name}</div>'
+                url = get_blob_url(s)
+                chips_html += f'<a href="{url}" target="_blank" class="chip"><span class="chip-badge {color}">{label}</span>{name}</a>'
             st.markdown(f'<div class="sources-row">{chips_html}</div>', unsafe_allow_html=True)
 
 # --- Chat Input ---
@@ -439,7 +472,8 @@ if question:
                 for s in sources:
                     color, label = get_file_icon(s)
                     name = s.split("/")[-1]
-                    chips_html += f'<div class="chip"><span class="chip-badge {color}">{label}</span>{name}</div>'
+                    url = get_blob_url(s)
+                    chips_html += f'<a href="{url}" target="_blank" class="chip"><span class="chip-badge {color}">{label}</span>{name}</a>'
                 st.markdown(f'<div class="sources-row">{chips_html}</div>', unsafe_allow_html=True)
 
     st.session_state.messages.append({"role": "assistant", "content": answer, "sources": sources})
