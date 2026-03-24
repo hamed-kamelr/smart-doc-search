@@ -2,6 +2,7 @@
 
 # DocChat
 
+
 ### AI-Powered Document Assistant
 
 **Ask questions about your PDFs, spreadsheets, and images — get instant, cited answers.**
