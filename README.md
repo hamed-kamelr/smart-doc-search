@@ -147,11 +147,7 @@ python ingest_documents.py      # Extract → chunk → embed → index
 
 ### 2. Launch the App
 
-```bash
-streamlit run app.py
-```
-
-Or use the [live demo](https://smart-doc-search-ebeagmyzgnnpojgi9edsne.streamlit.app/).
+Use the [live demo](https://smart-doc-search-ebeagmyzgnnpojgi9edsne.streamlit.app/).
 
 ---
 
