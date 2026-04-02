@@ -20,7 +20,7 @@ Built with Azure AI Search, Azure OpenAI, GPT-4o, and Streamlit.
 
 </div>
 
-![DocChat Screenshot](https://raw.githubusercontent.com/hamed-kamelr/smart-doc-search/main/assets/screenshot.png)
+![DocChat Screenshot](https://iili.io/BqDhGCN.png)
 
 ---
 
