@@ -18,9 +18,9 @@ Built with Azure AI Search, Azure OpenAI, GPT-4o, and Streamlit.
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-HuggingFace-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/spaces/hamed-kamelrh/doc-chat)
 
-<img src="https://raw.githubusercontent.com/hamed-kamelr/smart-doc-search/main/assets/screenshot.png" alt="DocChat Screenshot" width="900">
-
 </div>
+
+![DocChat Screenshot](https://raw.githubusercontent.com/hamed-kamelr/smart-doc-search/main/assets/screenshot.png)
 
 ---
 
