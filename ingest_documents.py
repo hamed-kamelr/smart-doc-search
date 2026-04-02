@@ -118,7 +118,7 @@ def ingest():
 
         # Chunk
         chunks = chunk_text(text)
-        print(f"  Extracted {len(text)} chars → {len(chunks)} chunks")
+        print(f"  Extracted {len(text)} chars -> {len(chunks)} chunks")
 
         # Build documents for search index
         for i, chunk in enumerate(chunks):

@@ -16,9 +16,9 @@ Built with Azure AI Search, Azure OpenAI, GPT-4o, and Streamlit.
 
 ---
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://smart-doc-search-ebeagmyzgnnpojgi9edsne.streamlit.app/)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-HuggingFace-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/spaces/hamed-kamelrh/doc-chat)
 
-![DocChat Screenshot](assets/screenshot.png)
+<img src="assets/screenshot.png" alt="DocChat Screenshot" width="900">
 
 </div>
 
@@ -147,7 +147,11 @@ python ingest_documents.py      # Extract → chunk → embed → index
 
 ### 2. Launch the App
 
-Use the [live demo](https://smart-doc-search-ebeagmyzgnnpojgi9edsne.streamlit.app/).
+```bash
+streamlit run app.py
+```
+
+Or use the [live demo](https://huggingface.co/spaces/hamed-kamelrh/doc-chat).
 
 ---
 
