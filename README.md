@@ -7,7 +7,7 @@
 
 **Ask questions about your PDFs, spreadsheets, and images — get instant, cited answers.**
 
-Built with Azure AI Search, Azure OpenAI, GPT-4o, and Streamlit.
+Built with Azure AI Search, Azure OpenAI, GPT-4o, and Hugging Face.
 
 ![Python](https://img.shields.io/badge/Python-3.12-blue?style=for-the-badge&logo=python&logoColor=white)
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.55-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
