@@ -1,0 +1,13 @@
+name: Hello
+
+on:
+  push:
+    branches: [staging]
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "Hello from branch ${{ github.ref_name }}"
+      - run: ls -la
