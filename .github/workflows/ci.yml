@@ -1,10 +1,9 @@
 name: CI
 
 on:
-  push:
-    branches: [staging]
   pull_request:
     branches: [staging, main]
+  workflow_call:   # lets deploy.yml run CI first, as a gate before deploying
 
 jobs:
   lint:

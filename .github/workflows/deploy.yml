@@ -1,0 +1,48 @@
+name: Deploy
+
+on:
+  push:
+    branches: [staging]
+
+# Never run two deploys to the same branch at once
+concurrency:
+  group: deploy-${{ github.ref_name }}
+  cancel-in-progress: false
+
+jobs:
+  ci:
+    uses: ./.github/workflows/ci.yml
+
+  deploy:
+    needs: ci
+    runs-on: ubuntu-latest
+    environment:
+      name: staging
+      url: https://huggingface.co/spaces/${{ vars.HF_SPACE_ID }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Hugging Face client
+        run: pip install huggingface_hub
+
+      - name: Deploy to Hugging Face Space
+        env:
+          # vars.* and secrets.* come from the environment named above
+          HF_SPACE_ID: ${{ vars.HF_SPACE_ID }}
+          APP_ENV: ${{ vars.APP_ENV }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          SEARCH_ENDPOINT: ${{ secrets.SEARCH_ENDPOINT }}
+          SEARCH_ADMIN_KEY: ${{ secrets.SEARCH_ADMIN_KEY }}
+          SEARCH_INDEX_NAME: ${{ secrets.SEARCH_INDEX_NAME }}
+          AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
+          AZURE_OPENAI_KEY: ${{ secrets.AZURE_OPENAI_KEY }}
+          AZURE_OPENAI_EMBEDDING_DEPLOYMENT: ${{ secrets.AZURE_OPENAI_EMBEDDING_DEPLOYMENT }}
+          AZURE_OPENAI_API_VERSION: ${{ secrets.AZURE_OPENAI_API_VERSION }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          AZURE_STORAGE_CONNECTION_STRING: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
+          BLOB_CONTAINER_NAME: ${{ secrets.BLOB_CONTAINER_NAME }}
+        run: python .github/scripts/deploy_space.py

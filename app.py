@@ -127,6 +127,9 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
+if os.getenv("APP_ENV", "production") != "production":
+    st.warning(f"{os.getenv('APP_ENV').upper()} environment: not the live app.")
+
 # --- CSS ---
 st.markdown("""
 <style>
